@@ -160,3 +160,192 @@ echo "Your system has been running for $(uptime -p)."
 --- 
 
 This training provides a strong foundation for Shell scripting and prepares participants for more advanced scripting concepts in subsequent sessions.
+---
+
+
+### **Week 1: Introduction to Shell Scripting**  
+**Session 2: Working with Variables and User Input**
+
+---
+
+### **Session Objectives**:
+By the end of this session, participants will:
+1. Understand how to declare and use variables in shell scripting.
+2. Learn how to read user input interactively.
+3. Perform basic string manipulations.
+4. Execute arithmetic operations within shell scripts.
+5. Create a hands-on script that takes user input and performs a calculation.
+
+---
+
+### **Topics and Training Plan**
+
+---
+
+#### **1. Variables: Declaring and Using Variables**
+**Explanation**: Variables store data that can be referenced and manipulated in your script. Shell variables do not require explicit data types.
+
+**Examples**:  
+```bash
+# Declare a variable
+name="John Doe"
+age=25
+
+# Use variables
+echo "Name: $name"
+echo "Age: $age"
+```
+
+**Key Notes**:
+- Variables are case-sensitive.
+- Use `$` to access the value of a variable.
+- Avoid spaces between the variable name, `=` sign, and value.
+
+---
+
+#### **2. Reading User Input**
+**Explanation**: You can prompt users to input data using the `read` command.
+
+**Example**:  
+```bash
+echo "Enter your name:"
+read user_name
+echo "Hello, $user_name!"
+```
+
+**Key Notes**:
+- `read` waits for user input and assigns it to the specified variable.
+- You can prompt for multiple inputs:
+  ```bash
+  echo "Enter your first and last name:"
+  read first_name last_name
+  echo "Hello, $first_name $last_name!"
+  ```
+
+---
+
+#### **3. Basic String Manipulation**
+**Explanation**: Shell scripting allows basic string operations like concatenation and substring extraction.
+
+**Examples**:
+- **Concatenation**:
+  ```bash
+  first_name="John"
+  last_name="Doe"
+  full_name="$first_name $last_name"
+  echo "Full Name: $full_name"
+  ```
+
+- **Substring Extraction**:
+  ```bash
+  string="HelloWorld"
+  echo "Substring: ${string:0:5}"  # Output: Hello
+  ```
+
+---
+
+#### **4. Arithmetic Operations**
+**Explanation**: Arithmetic can be performed using `$(( ))` or the `expr` command.
+
+**Examples**:
+- **Using `$(( ))`**:
+  ```bash
+  num1=10
+  num2=20
+  sum=$((num1 + num2))
+  echo "Sum: $sum"
+  ```
+
+- **Using `expr`**:
+  ```bash
+  num1=10
+  num2=20
+  sum=$(expr $num1 + $num2)
+  echo "Sum: $sum"
+  ```
+
+**Key Notes**:
+- Ensure variables contain only numeric values for arithmetic.
+- Common operators: `+`, `-`, `*`, `/`, `%`.
+
+---
+
+### **Hands-On Activity**
+
+**Goal**: Create a script that takes user input to perform a simple calculation and prints the result.
+
+**Step-by-Step Instructions**:
+
+1. Open a terminal and create a new script file:
+   ```bash
+   nano calculate.sh
+   ```
+
+2. Add the following script:
+   ```bash
+   #!/bin/bash
+
+   # Prompt the user for two numbers
+   echo "Enter the first number:"
+   read num1
+
+   echo "Enter the second number:"
+   read num2
+
+   # Perform calculations
+   sum=$((num1 + num2))
+   diff=$((num1 - num2))
+   prod=$((num1 * num2))
+   if [ "$num2" -ne 0 ]; then
+       quot=$((num1 / num2))
+       mod=$((num1 % num2))
+   else
+       quot="undefined (division by zero)"
+       mod="undefined (division by zero)"
+   fi
+
+   # Display the results
+   echo "Results:"
+   echo "Sum: $sum"
+   echo "Difference: $diff"
+   echo "Product: $prod"
+   echo "Quotient: $quot"
+   echo "Modulo: $mod"
+   ```
+
+3. Save the file and make it executable:
+   ```bash
+   chmod +x calculate.sh
+   ```
+
+4. Run the script:
+   ```bash
+   ./calculate.sh
+   ```
+
+5. Test the script with various inputs to verify its functionality.
+
+---
+
+### **Key Takeaways**
+- Variables in shell scripts store dynamic values for use within the script.
+- User input is gathered interactively with the `read` command.
+- String manipulations and arithmetic operations enhance the script’s flexibility.
+- Hands-on practice solidifies the understanding of theoretical concepts.
+
+---
+
+### **Q&A and Troubleshooting**
+
+- **Q: What if I forget to make the script executable?**
+  - **A**: Run `chmod +x script_name.sh` to make the script executable.
+
+- **Q: What happens if I divide by zero?**
+  - **A**: The script checks for this condition and displays a message to avoid runtime errors.
+
+- **Q: How can I debug errors in my script?**
+  - **A**: Use `bash -x script_name.sh` to see step-by-step execution for debugging.
+
+---
+
+This training provides a foundational understanding of variables, user input, and operations, setting the stage for more advanced scripting topics in future sessions.
