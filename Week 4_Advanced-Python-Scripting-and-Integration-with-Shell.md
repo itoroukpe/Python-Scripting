@@ -43,7 +43,87 @@ This script is designed to:
 3. **Write Processed Data to a New File**:
    - The script opens a file named `output.txt` in **write mode** (`'w'`), which creates the file if it doesn’t exist or overwrites it if it does.
    - For each line in the `data` list, it converts the line to uppercase and writes it to the `output.txt` file.
+---
+In Python, the `open()` function allows you to work with files in different modes. These modes define how the file will be opened (e.g., for reading, writing, or both) and whether the file's content should be treated as text or binary data.
 
+---
+
+### **1. Modes for Reading Files**
+
+#### **Text Mode (`r`)**
+- **Usage**: `open('filename.txt', 'r')`
+- **Purpose**: Opens the file for reading text. This is the default mode if no mode is specified.
+- **Behavior**:
+  - The file must exist; otherwise, it raises a `FileNotFoundError`.
+  - The file's content is treated as a string.
+  - Reads the file line by line or in chunks.
+- **Example**:
+  ```python
+  with open('example.txt', 'r') as file:
+      for line in file:
+          print(line.strip())  # Reads and prints each line
+  ```
+
+---
+
+#### **Binary Mode (`rb`)**
+- **Usage**: `open('filename.txt', 'rb')`
+- **Purpose**: Opens the file for reading in binary mode.
+- **Behavior**:
+  - The file must exist; otherwise, it raises a `FileNotFoundError`.
+  - The file's content is treated as bytes, not text.
+  - Useful for non-text files like images, videos, or audio files.
+- **Example**:
+  ```python
+  with open('example.jpg', 'rb') as file:
+      content = file.read()
+      print(content[:10])  # Prints the first 10 bytes
+  ```
+
+---
+
+#### **Read and Write Mode (`r+`)**
+- **Usage**: `open('filename.txt', 'r+')`
+- **Purpose**: Opens the file for both reading and writing.
+- **Behavior**:
+  - The file must exist; otherwise, it raises a `FileNotFoundError`.
+  - Allows modifications to the file's content while preserving its original data.
+  - The file pointer is initially placed at the beginning of the file.
+- **Example**:
+  ```python
+  with open('example.txt', 'r+') as file:
+      content = file.read()
+      print("Original Content:", content)
+      file.write("\nNew content added.")  # Adds new content at the end
+  ```
+
+---
+
+### **Comparison of Modes**
+
+| Mode | Full Name      | Behavior                                                                                   |
+|------|----------------|--------------------------------------------------------------------------------------------|
+| `r`  | Read           | Opens the file for reading text. Raises an error if the file doesn't exist.                |
+| `rb` | Read Binary    | Opens the file for reading binary data. Used for non-text files.                           |
+| `r+` | Read/Write     | Opens the file for both reading and writing. Allows modifying existing content.            |
+
+---
+
+### **When to Use Each Mode**
+1. **`r` (Read)**:
+   - Use when you only need to read a file's text content.
+   - Example: Reading a log file or a configuration file.
+
+2. **`rb` (Read Binary)**:
+   - Use when working with non-text files like images, videos, or compressed files.
+   - Example: Reading an image to process its binary content.
+
+3. **`r+` (Read/Write)**:
+   - Use when you need to read a file and update its content.
+   - Example: Modifying an existing log file or appending data to an existing file.
+
+By understanding these modes, you can choose the appropriate way to interact with files based on your application's needs.
+---
 ### **Purpose**
 The script effectively reads all text from `input.txt`, converts it to uppercase, and saves the modified content into a new file called `output.txt`.
 
