@@ -26,7 +26,83 @@
      - Comparison operators (`==`, `!=`, `>`, `<`).
      - Logical operators (`and`, `or`, `not`).
    ---
-   Here’s a script that demonstrates the basic operations on the mentioned data structures:
+   
+4. **Variables and User Input**
+   - Declaring and assigning variables.
+   - Getting input from users with the `input()` function.
+   - Example:
+     ```python
+     name = input("Enter your name: ")
+     age = input("Enter your age: ")
+     print(f"Hello, {name}! You are {age} years old.")
+     ```
+
+5. **Writing and Running a Python Script**
+   - Using an IDE or text editor (e.g., VS Code or PyCharm).
+   - Saving the file with `.py` extension.
+   - Running the script via terminal/command prompt:
+     ```bash
+     python script_name.py
+     ```
+
+**Hands-On Exercise**:
+Write a Python script that takes user input and prints a customized greeting:
+- Prompt the user for their name and favorite color.
+- Output a message like: `"Hello, [name]! Your favorite color is [color]."`
+
+Example Solution:
+```python
+name = input("What is your name? ")
+color = input("What is your favorite color? ")
+print(f"Hello, {name}! Your favorite color is {color}.")
+```
+
+---
+
+#### **Session 6: Working with Data Structures**
+**Objective**: Introduce Python's core data structures, teach basic operations, and demonstrate how to iterate over them.
+
+---
+
+**Topics Covered**:
+
+1. **Lists, Tuples, Dictionaries, and Sets**
+   - **Lists**:
+     - Mutable, ordered collection.
+     - Example: `fruits = ["apple", "banana", "cherry"]`
+   - **Tuples**:
+     - Immutable, ordered collection.
+     - Example: `coordinates = (10, 20)`
+   - **Dictionaries**:
+     - Key-value pairs.
+     - Example: `contacts = {"Alice": "123-456", "Bob": "987-654"}`
+   - **Sets**:
+     - Unordered, unique elements.
+     - Example: `unique_numbers = {1, 2, 3}`
+
+2. **Basic Operations on Data Structures**
+   - Lists: Append, remove, sort.
+     ```python
+     fruits.append("orange")
+     fruits.remove("banana")
+     fruits.sort()
+     ```
+   - Tuples: Access elements by index.
+     ```python
+     print(coordinates[0])
+     ```
+   - Dictionaries: Add, update, delete keys.
+     ```python
+     contacts["Charlie"] = "555-123"
+     del contacts["Alice"]
+     ```
+   - Sets: Add, remove elements, set operations.
+     ```python
+     unique_numbers.add(4)
+     unique_numbers.discard(2)
+     ```
+---
+Here’s a script that demonstrates the basic operations on the mentioned data structures:
 
 ```python
 # Basic Operations on Data Structures
@@ -138,81 +214,8 @@ Union of sets: {1, 3, 4, 5, 6}
 - **Dictionaries**: Covers adding, updating, and deleting key-value pairs.
 - **Sets**: Highlights adding and removing elements, and includes a union operation to combine two sets.
 ---
-4. **Variables and User Input**
-   - Declaring and assigning variables.
-   - Getting input from users with the `input()` function.
-   - Example:
-     ```python
-     name = input("Enter your name: ")
-     age = input("Enter your age: ")
-     print(f"Hello, {name}! You are {age} years old.")
-     ```
-
-5. **Writing and Running a Python Script**
-   - Using an IDE or text editor (e.g., VS Code or PyCharm).
-   - Saving the file with `.py` extension.
-   - Running the script via terminal/command prompt:
-     ```bash
-     python script_name.py
-     ```
-
-**Hands-On Exercise**:
-Write a Python script that takes user input and prints a customized greeting:
-- Prompt the user for their name and favorite color.
-- Output a message like: `"Hello, [name]! Your favorite color is [color]."`
-
-Example Solution:
-```python
-name = input("What is your name? ")
-color = input("What is your favorite color? ")
-print(f"Hello, {name}! Your favorite color is {color}.")
-```
 
 ---
-
-#### **Session 6: Working with Data Structures**
-**Objective**: Introduce Python's core data structures, teach basic operations, and demonstrate how to iterate over them.
-
----
-
-**Topics Covered**:
-
-1. **Lists, Tuples, Dictionaries, and Sets**
-   - **Lists**:
-     - Mutable, ordered collection.
-     - Example: `fruits = ["apple", "banana", "cherry"]`
-   - **Tuples**:
-     - Immutable, ordered collection.
-     - Example: `coordinates = (10, 20)`
-   - **Dictionaries**:
-     - Key-value pairs.
-     - Example: `contacts = {"Alice": "123-456", "Bob": "987-654"}`
-   - **Sets**:
-     - Unordered, unique elements.
-     - Example: `unique_numbers = {1, 2, 3}`
-
-2. **Basic Operations on Data Structures**
-   - Lists: Append, remove, sort.
-     ```python
-     fruits.append("orange")
-     fruits.remove("banana")
-     fruits.sort()
-     ```
-   - Tuples: Access elements by index.
-     ```python
-     print(coordinates[0])
-     ```
-   - Dictionaries: Add, update, delete keys.
-     ```python
-     contacts["Charlie"] = "555-123"
-     del contacts["Alice"]
-     ```
-   - Sets: Add, remove elements, set operations.
-     ```python
-     unique_numbers.add(4)
-     unique_numbers.discard(2)
-     ```
-
 3. **Using Loops to Iterate Over Data Structures**
    - **For Loops**:
      ```python
