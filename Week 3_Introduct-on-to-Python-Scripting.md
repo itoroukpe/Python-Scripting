@@ -25,8 +25,120 @@
      - Arithmetic operators (`+`, `-`, `*`, `/`, `%`).
      - Comparison operators (`==`, `!=`, `>`, `<`).
      - Logical operators (`and`, `or`, `not`).
+   ---
+   Here’s a script that demonstrates the basic operations on the mentioned data structures:
 
-3. **Variables and User Input**
+```python
+# Basic Operations on Data Structures
+
+# --- Lists ---
+print("LIST OPERATIONS")
+# Initialize a list
+fruits = ["apple", "banana", "cherry"]
+print("Initial list:", fruits)
+
+# Append an element
+fruits.append("orange")
+print("After appending 'orange':", fruits)
+
+# Remove an element
+fruits.remove("banana")
+print("After removing 'banana':", fruits)
+
+# Sort the list
+fruits.sort()
+print("After sorting:", fruits)
+
+print("\n")
+
+# --- Tuples ---
+print("TUPLE OPERATIONS")
+# Initialize a tuple
+coordinates = (10, 20, 30)
+print("Tuple:", coordinates)
+
+# Access an element by index
+print("First element (index 0):", coordinates[0])
+
+print("\n")
+
+# --- Dictionaries ---
+print("DICTIONARY OPERATIONS")
+# Initialize a dictionary
+contacts = {"Alice": "555-001", "Bob": "555-002"}
+print("Initial dictionary:", contacts)
+
+# Add a new key-value pair
+contacts["Charlie"] = "555-123"
+print("After adding 'Charlie':", contacts)
+
+# Update an existing key
+contacts["Bob"] = "555-456"
+print("After updating 'Bob':", contacts)
+
+# Delete a key
+del contacts["Alice"]
+print("After deleting 'Alice':", contacts)
+
+print("\n")
+
+# --- Sets ---
+print("SET OPERATIONS")
+# Initialize a set
+unique_numbers = {1, 2, 3}
+print("Initial set:", unique_numbers)
+
+# Add an element
+unique_numbers.add(4)
+print("After adding 4:", unique_numbers)
+
+# Remove an element
+unique_numbers.discard(2)
+print("After discarding 2:", unique_numbers)
+
+# Perform a set operation: Union
+another_set = {3, 5, 6}
+union_set = unique_numbers.union(another_set)
+print("Union of sets:", union_set)
+```
+
+### Output of the Script:
+If you run this script, the output will look something like this:
+
+```
+LIST OPERATIONS
+Initial list: ['apple', 'banana', 'cherry']
+After appending 'orange': ['apple', 'banana', 'cherry', 'orange']
+After removing 'banana': ['apple', 'cherry', 'orange']
+After sorting: ['apple', 'cherry', 'orange']
+
+
+TUPLE OPERATIONS
+Tuple: (10, 20, 30)
+First element (index 0): 10
+
+
+DICTIONARY OPERATIONS
+Initial dictionary: {'Alice': '555-001', 'Bob': '555-002'}
+After adding 'Charlie': {'Alice': '555-001', 'Bob': '555-002', 'Charlie': '555-123'}
+After updating 'Bob': {'Alice': '555-001', 'Bob': '555-456', 'Charlie': '555-123'}
+After deleting 'Alice': {'Bob': '555-456', 'Charlie': '555-123'}
+
+
+SET OPERATIONS
+Initial set: {1, 2, 3}
+After adding 4: {1, 2, 3, 4}
+After discarding 2: {1, 3, 4}
+Union of sets: {1, 3, 4, 5, 6}
+```
+
+### Explanation:
+- **Lists**: Demonstrates adding, removing, and sorting elements.
+- **Tuples**: Shows how to access elements using an index.
+- **Dictionaries**: Covers adding, updating, and deleting key-value pairs.
+- **Sets**: Highlights adding and removing elements, and includes a union operation to combine two sets.
+---
+4. **Variables and User Input**
    - Declaring and assigning variables.
    - Getting input from users with the `input()` function.
    - Example:
@@ -36,7 +148,7 @@
      print(f"Hello, {name}! You are {age} years old.")
      ```
 
-4. **Writing and Running a Python Script**
+5. **Writing and Running a Python Script**
    - Using an IDE or text editor (e.g., VS Code or PyCharm).
    - Saving the file with `.py` extension.
    - Running the script via terminal/command prompt:
