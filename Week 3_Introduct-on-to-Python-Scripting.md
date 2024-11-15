@@ -235,6 +235,108 @@ Union of sets: {1, 3, 4, 5, 6}
          print(f"{name}: {phone}")
      ```
 
+---
+Here’s a Python script that demonstrates how to use **for loops** and **while loops** to iterate over different data structures, such as lists and dictionaries:
+
+### **Script: Iterating Over Data Structures**
+
+```python
+# Example List
+fruits = ["apple", "banana", "cherry", "date"]
+
+# Using a For Loop to Iterate Over a List
+print("Using a For Loop to Iterate Over a List:")
+for fruit in fruits:
+    print(fruit)
+
+# Using a While Loop to Iterate Over a List
+print("\nUsing a While Loop to Iterate Over a List:")
+i = 0
+while i < len(fruits):
+    print(fruits[i])
+    i += 1
+
+# Example Dictionary
+contacts = {
+    "Alice": "123-456-7890",
+    "Bob": "987-654-3210",
+    "Charlie": "555-666-7777"
+}
+
+# Iterating Over a Dictionary
+print("\nIterating Over a Dictionary:")
+for name, phone in contacts.items():
+    print(f"{name}: {phone}")
+```
+
+---
+
+### **Explanation of the Script**
+
+#### **1. For Loop with a List**
+- **Code**:
+  ```python
+  for fruit in fruits:
+      print(fruit)
+  ```
+- **What it does**:
+  - Iterates over each item in the `fruits` list.
+  - Assigns each item to the variable `fruit` during each iteration.
+  - Prints the current `fruit`.
+
+---
+
+#### **2. While Loop with a List**
+- **Code**:
+  ```python
+  i = 0
+  while i < len(fruits):
+      print(fruits[i])
+      i += 1
+  ```
+- **What it does**:
+  - Uses a counter variable `i` to track the index of the `fruits` list.
+  - Continues looping as long as `i` is less than the length of the list.
+  - Prints the item at the current index `i` and increments `i` by 1 after each iteration.
+
+---
+
+#### **3. For Loop with a Dictionary**
+- **Code**:
+  ```python
+  for name, phone in contacts.items():
+      print(f"{name}: {phone}")
+  ```
+- **What it does**:
+  - Uses the `.items()` method to get key-value pairs from the dictionary.
+  - Iterates through each `name` (key) and `phone` (value) in the `contacts` dictionary.
+  - Prints the name and phone number in a formatted string.
+
+---
+
+### **Sample Output**
+
+```plaintext
+Using a For Loop to Iterate Over a List:
+apple
+banana
+cherry
+date
+
+Using a While Loop to Iterate Over a List:
+apple
+banana
+cherry
+date
+
+Iterating Over a Dictionary:
+Alice: 123-456-7890
+Bob: 987-654-3210
+Charlie: 555-666-7777
+```
+
+This script demonstrates how to effectively use loops to process lists and dictionaries in Python.
+---
 **Hands-On Exercise**:
 Write a script that stores and retrieves data in a dictionary, simulating a simple address book:
 1. Allow the user to add a name and phone number.
