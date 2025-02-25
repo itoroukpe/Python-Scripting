@@ -123,7 +123,87 @@ else
     done
 fi
 ```
+---
+This **Bash script** checks for available **package updates** on a system using **APT (Advanced Package Tool)**, prompts the user to upgrade, and proceeds based on user input.
 
+---
+
+### **Code Breakdown**
+```bash
+#!/bin/bash
+```
+- The **shebang (`#!`)** specifies that the script should be executed using the **Bash shell**.
+
+---
+
+#### **Step 1: Check for Available Updates**
+```bash
+updates=$(sudo apt update 2>/dev/null | grep "packages can be upgraded" | awk '{print $1}')
+```
+- Runs `sudo apt update` to refresh the package list.
+- Redirects **error messages** (`stderr`) to `/dev/null` to suppress any warnings.
+- **Filters** the output using `grep "packages can be upgraded"` to find the line that indicates available updates.
+- Uses **`awk '{print $1}'`** to extract the number of packages that can be upgraded and assigns it to the variable `$updates`.
+
+---
+
+#### **Step 2: Conditional Check for Updates**
+```bash
+if [ -z "$updates" ]; then
+    echo "No updates available."
+```
+- If `$updates` is **empty**, prints `"No updates available."`
+- The condition `[ -z "$updates" ]` checks whether `$updates` is an empty string (`-z` means "is empty").
+
+---
+
+#### **Step 3: Prompt User for Upgrade**
+```bash
+else
+    echo "$updates packages can be upgraded."
+```
+- If updates are available, prints how many packages can be upgraded.
+
+```bash
+    while true; do
+        read -p "Do you want to upgrade now? (y/n): " answer
+```
+- Starts a **loop** to repeatedly ask the user whether they want to upgrade (`y/n`).
+- Uses `read -p` to prompt for input and store it in the variable `$answer`.
+
+---
+
+#### **Step 4: Handle User Input**
+```bash
+        case $answer in
+            y|Y)
+                sudo apt upgrade -y
+                echo "System upgraded successfully."
+                break
+                ;;
+```
+- If the user enters **`y` or `Y`**, runs `sudo apt upgrade -y` to upgrade all packages **without confirmation**.
+- Prints `"System upgraded successfully."`
+- `break` **exits the loop**.
+
+```bash
+            n|N)
+                echo "Exiting without upgrading."
+                break
+                ;;
+```
+- If the user enters **`n` or `N`**, prints `"Exiting without upgrading."` and exits the loop.
+
+```bash
+            *)
+                echo "Invalid input. Please enter y or n."
+                ;;
+```
+- If the user enters **anything else**, prints `"Invalid input. Please enter y or n."` and re-prompts.
+
+---
+
+---
 ---
 
 #### **Session 4: Functions and Error Handling**
