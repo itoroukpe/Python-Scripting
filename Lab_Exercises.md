@@ -330,9 +330,9 @@ else
     echo "Internet connectivity lost on $(date)" | mail -s "Network Alert" $ALERT_EMAIL
 fi
 
-# Check Open Network Ports
+# Check Open Network Ports - use ss -tulnp in place of netstat -tulnp
 log_status "Active network connections:"
-netstat -tulnp | grep LISTEN >> $LOG_FILE
+ss -tulnp | grep LISTEN >> $LOG_FILE
 ```
 
 3️⃣ **Save and make it executable:**  
