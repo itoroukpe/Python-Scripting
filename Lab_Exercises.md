@@ -165,7 +165,7 @@ Modify the script to:
 ### **Step 1: Create the Script**
 1️⃣ **Create a new script file:**  
 ```bash
-nano process_monitor.sh
+vim process_monitor.sh
 ```
 
 2️⃣ **Paste the following script:**
@@ -232,7 +232,7 @@ crontab -e
 ### **Step 1: Create the Script**
 1️⃣ **Create a new script file:**  
 ```bash
-nano disk_cleanup.sh
+vim disk_cleanup.sh
 ```
 
 2️⃣ **Paste the following script:**
@@ -300,7 +300,7 @@ crontab -e
 ### **Step 1: Create the Script**
 1️⃣ **Create a new script file:**  
 ```bash
-nano network_monitor.sh
+vim network_monitor.sh
 ```
 
 2️⃣ **Paste the following script:**
@@ -378,7 +378,7 @@ crontab -e
 ## **Step 1: Create the Script**
 1️⃣ **Create a new script file:**  
 ```bash
-nano system_monitor.sh
+vim system_monitor.sh
 ```
 
 2️⃣ **Paste the following script:**
