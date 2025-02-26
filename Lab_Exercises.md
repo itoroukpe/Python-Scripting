@@ -29,7 +29,7 @@ By the end of this lab, students will be able to:
 ## **Step 1: Create a System Monitoring Script**
 1️⃣ **Create a new script file:**  
 ```bash
-nano health_check.sh
+vim health_check.sh
 ```
 2️⃣ **Paste the following script:**
 ```bash
